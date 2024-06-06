@@ -1,0 +1,44 @@
+[2024-06-04T12:22:51.640+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-04T12:22:51.651+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: metrics_calculators.pipelin_dsqe manual__2024-06-04T12:22:49.511509+00:00 [queued]>
+[2024-06-04T12:22:51.655+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: metrics_calculators.pipelin_dsqe manual__2024-06-04T12:22:49.511509+00:00 [queued]>
+[2024-06-04T12:22:51.655+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-04T12:22:51.660+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): pipelin_dsqe> on 2024-06-04 12:22:49.511509+00:00
+[2024-06-04T12:22:51.664+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=12134) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-04T12:22:51.664+0000] {standard_task_runner.py:63} INFO - Started process 12136 to run task
+[2024-06-04T12:22:51.665+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'metrics_calculators', 'pipelin_dsqe', 'manual__2024-06-04T12:22:49.511509+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/dag_reader.py', '--cfg-path', '/tmp/tmp40fb513e']
+[2024-06-04T12:22:51.666+0000] {standard_task_runner.py:91} INFO - Job 28: Subtask pipelin_dsqe
+[2024-06-04T12:22:51.693+0000] {task_command.py:426} INFO - Running <TaskInstance: metrics_calculators.pipelin_dsqe manual__2024-06-04T12:22:49.511509+00:00 [running]> on host f291404afb14
+[2024-06-04T12:22:51.735+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mehdizarria' AIRFLOW_CTX_DAG_ID='metrics_calculators' AIRFLOW_CTX_TASK_ID='pipelin_dsqe' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T12:22:49.511509+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-04T12:22:49.511509+00:00'
+[2024-06-04T12:22:51.736+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-04T12:22:51.740+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-04T12:22:51.740+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_reader.py", line 43, in pipeline
+    print(df.collect().head())
+          ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/polars/lazyframe/frame.py", line 1967, in collect
+    return wrap_df(ldf.collect(callback))
+                   ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: No such file or directory (os error 2): ../Data/source/2013/*.csv
+[2024-06-04T12:22:51.750+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=metrics_calculators, task_id=pipelin_dsqe, run_id=manual__2024-06-04T12:22:49.511509+00:00, execution_date=20240604T122249, start_date=20240604T122251, end_date=20240604T122251
+[2024-06-04T12:22:51.755+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 28 for task pipelin_dsqe (No such file or directory (os error 2): ../Data/source/2013/*.csv; 12136)
+[2024-06-04T12:22:51.763+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-04T12:22:51.776+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-04T12:22:51.777+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
