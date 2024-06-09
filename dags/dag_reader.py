@@ -10,6 +10,11 @@ import polars as pl
 from airflow.providers.apprise.notifications.apprise import send_apprise_notification
 from apprise import NotifyType
 
+from airflow.providers.google.cloud.operators.functions import CloudFunctionInvokeFunctionOperator
+
+from google.oauth2 import service_account
+import google.auth.transport.requests
+
 default_args = {
     'owner': 'mehdizarria',
     'retries': 1,
@@ -20,6 +25,15 @@ default_args = {
 def print_df(ti=None, **kwargs):
     lazy_df = ti.xcom_pull(task_ids='read_files')
     print(lazy_df.collect().head())
+
+
+def generate_token(path, target_audience):
+    creds = service_account.IDTokenCredentials.from_service_account_file(
+        path,
+        target_audience=target_audience)
+    request = google.auth.transport.requests.Request()
+    creds.refresh(request)
+    return creds.token
 
 
 def calculate_metrics(df: pl.LazyFrame) -> pl.LazyFrame:
@@ -63,13 +77,15 @@ with DAG(
 
     start_empty_task = EmptyOperator(task_id='start_job')
 
-    statistics_calculator_task = PythonOperator(
-        task_id='statistics_calculator',
-        python_callable=statistics_calculator,
-        op_kwargs={
-            'source_path': '/opt/airflow/Data/source/2013/*.csv',
-            'target_path': '/opt/airflow/Data/target/2013/metrics.parquet'})
+    cloud_function_task = CloudFunctionInvokeFunctionOperator(
+        task_id='cloud_function_task',
+        gcp_conn_id='gcp_connection',
+        function_id='function-1',
+        location='europe-west1',
+        project_id='mz-data-manipulation',
+        input_data={}
+    )
 
     end_empty_task = EmptyOperator(task_id='end_job')
 
-    start_empty_task >> statistics_calculator_task >> end_empty_task
+    start_empty_task >> cloud_function_task >> end_empty_task

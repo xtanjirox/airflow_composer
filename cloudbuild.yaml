@@ -1,0 +1,12 @@
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - calculate-metrics
+      - --region=europe-west1
+      - --runtime=python311
+      - --source=./includes
+      - --entry-point=execute_function
+      - --trigger-http

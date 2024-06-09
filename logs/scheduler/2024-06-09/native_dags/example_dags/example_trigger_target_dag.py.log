@@ -1,0 +1,50 @@
+[2024-06-09T10:36:46.444+0000] {processor.py:161} INFO - Started process (PID=64) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-06-09T10:36:46.474+0000] {processor.py:830} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2024-06-09T10:36:46.539+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:46.526+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-06-09T10:36:46.828+0000] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2024-06-09T10:36:55.540+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:55.534+0000] {process_utils.py:263} INFO - Waiting up to 5 seconds for processes to exit...
+[2024-06-09T10:36:55.549+0000] {logging_mixin.py:188} WARNING - Exception ignored in: <function WeakKeyDictionary.__init__.<locals>.remove at 0xffff97d94b80>
+[2024-06-09T10:36:55.552+0000] {logging_mixin.py:188} WARNING - Traceback (most recent call last):
+[2024-06-09T10:36:55.553+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/weakref.py", line 369, in remove
+[2024-06-09T10:36:55.554+0000] {logging_mixin.py:188} WARNING -     def remove(k, selfref=ref(self)):
+[2024-06-09T10:36:55.555+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 453, in _exit_gracefully
+[2024-06-09T10:36:55.556+0000] {logging_mixin.py:188} WARNING -     self.log.debug("Current Stacktrace is: %s", "\n".join(map(str, inspect.stack())))
+[2024-06-09T10:36:55.556+0000] {logging_mixin.py:188} WARNING -                                                                    ^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.556+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1770, in stack
+[2024-06-09T10:36:55.558+0000] {logging_mixin.py:188} WARNING -     return getouterframes(sys._getframe(1), context)
+[2024-06-09T10:36:55.558+0000] {logging_mixin.py:188} WARNING -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.559+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1745, in getouterframes
+[2024-06-09T10:36:55.559+0000] {logging_mixin.py:188} WARNING -     traceback_info = getframeinfo(frame, context)
+[2024-06-09T10:36:55.560+0000] {logging_mixin.py:188} WARNING -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.560+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1718, in getframeinfo
+[2024-06-09T10:36:55.561+0000] {logging_mixin.py:188} WARNING -     index, positions=dis.Positions(*positions))
+[2024-06-09T10:36:55.562+0000] {logging_mixin.py:188} WARNING -                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.563+0000] {logging_mixin.py:188} WARNING -   File "<string>", line 1, in <lambda>
+[2024-06-09T10:36:55.564+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 453, in _exit_gracefully
+[2024-06-09T10:36:55.564+0000] {logging_mixin.py:188} WARNING -     self.log.debug("Current Stacktrace is: %s", "\n".join(map(str, inspect.stack())))
+[2024-06-09T10:36:55.565+0000] {logging_mixin.py:188} WARNING -                                                                    ^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.565+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1770, in stack
+[2024-06-09T10:36:55.565+0000] {logging_mixin.py:188} WARNING -     return getouterframes(sys._getframe(1), context)
+[2024-06-09T10:36:55.566+0000] {logging_mixin.py:188} WARNING -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.566+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1745, in getouterframes
+[2024-06-09T10:36:55.566+0000] {logging_mixin.py:188} WARNING -     traceback_info = getframeinfo(frame, context)
+[2024-06-09T10:36:55.566+0000] {logging_mixin.py:188} WARNING -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.567+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1703, in getframeinfo
+[2024-06-09T10:36:55.567+0000] {logging_mixin.py:188} WARNING -     filename = getsourcefile(frame) or getfile(frame)
+[2024-06-09T10:36:55.568+0000] {logging_mixin.py:188} WARNING -                ^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.568+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 963, in getsourcefile
+[2024-06-09T10:36:55.568+0000] {logging_mixin.py:188} WARNING -     module = getmodule(object, filename)
+[2024-06-09T10:36:55.568+0000] {logging_mixin.py:188} WARNING -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.569+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1002, in getmodule
+[2024-06-09T10:36:55.569+0000] {logging_mixin.py:188} WARNING -     if f == _filesbymodname.get(modname, None):
+[2024-06-09T10:36:55.569+0000] {logging_mixin.py:188} WARNING -             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:55.569+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 457, in _exit_gracefully
+[2024-06-09T10:36:55.569+0000] {logging_mixin.py:188} WARNING -     sys.exit(os.EX_OK)
+[2024-06-09T10:36:55.570+0000] {logging_mixin.py:188} WARNING - SystemExit: 0
+[2024-06-09T10:36:55.974+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:55.962+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:example_trigger_target_dag
+[2024-06-09T10:36:56.017+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.016+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:example_trigger_target_dag
+[2024-06-09T10:36:56.047+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.046+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:example_trigger_target_dag
+[2024-06-09T10:36:56.048+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.048+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-06-09T10:36:56.082+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.081+0000] {dag.py:3118} INFO - Creating ORM DAG for example_trigger_target_dag
+[2024-06-09T10:36:56.087+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.086+0000] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2024-06-09T10:36:56.166+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 9.978 seconds
