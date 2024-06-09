@@ -7,7 +7,7 @@ steps:
       - calculate-metrics
       - --region=europe-west1
       - --runtime=python311
-      - --source=./includes
+      - --source=./cloudfunctions/calculate_metrics
       - --entry-point=execute_function
       - --trigger-http
 options:
