@@ -31,5 +31,5 @@ def execute_function(request):
     source_path = 'gs://mz-data-bucket/2013/source/*.parquet'
     target_path = 'gs://mz-data-bucket/2013/target/metrics.parquet'
     statistics_calculator(source_path, target_path)
-    print('done')
+    print('done Mehdi')
     return {'data': 200}
