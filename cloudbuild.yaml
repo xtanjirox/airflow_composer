@@ -10,3 +10,5 @@ steps:
       - --source=./includes
       - --entry-point=execute_function
       - --trigger-http
+options:
+  logging: CLOUD_LOGGING_ONLY
