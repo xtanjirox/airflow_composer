@@ -1,0 +1,35 @@
+[2024-06-09T10:36:46.958+0000] {processor.py:161} INFO - Started process (PID=65) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_decorator.py
+[2024-06-09T10:36:46.962+0000] {processor.py:830} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_decorator.py for tasks to queue
+[2024-06-09T10:36:46.986+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:46.983+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_decorator.py
+[2024-06-09T10:36:47.131+0000] {processor.py:840} INFO - DAG(s) 'example_bash_decorator' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_decorator.py
+[2024-06-09T10:36:56.851+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:56.848+0000] {process_utils.py:263} INFO - Waiting up to 5 seconds for processes to exit...
+[2024-06-09T10:36:56.853+0000] {logging_mixin.py:188} WARNING - Exception ignored in: <function WeakKeyDictionary.__init__.<locals>.remove at 0xffff97d94b80>
+[2024-06-09T10:36:56.853+0000] {logging_mixin.py:188} WARNING - Traceback (most recent call last):
+[2024-06-09T10:36:56.854+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/weakref.py", line 369, in remove
+[2024-06-09T10:36:56.856+0000] {logging_mixin.py:188} WARNING -     def remove(k, selfref=ref(self)):
+[2024-06-09T10:36:56.858+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 454, in _exit_gracefully
+[2024-06-09T10:36:56.859+0000] {logging_mixin.py:188} WARNING -     self.terminate()
+[2024-06-09T10:36:56.860+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1258, in terminate
+[2024-06-09T10:36:56.862+0000] {logging_mixin.py:188} WARNING -     processor.terminate()
+[2024-06-09T10:36:56.862+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 267, in terminate
+[2024-06-09T10:36:56.864+0000] {logging_mixin.py:188} WARNING -     self._process._popen.wait(5)  # type: ignore
+[2024-06-09T10:36:56.865+0000] {logging_mixin.py:188} WARNING -     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:56.866+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 40, in wait
+[2024-06-09T10:36:56.868+0000] {logging_mixin.py:188} WARNING -     if not wait([self.sentinel], timeout):
+[2024-06-09T10:36:56.869+0000] {logging_mixin.py:188} WARNING -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-09T10:36:56.871+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/multiprocessing/connection.py", line 1128, in wait
+[2024-06-09T10:36:56.872+0000] {logging_mixin.py:188} WARNING -     with _WaitSelector() as selector:
+[2024-06-09T10:36:56.873+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/selectors.py", line 203, in __exit__
+[2024-06-09T10:36:56.875+0000] {logging_mixin.py:188} WARNING -     self.close()
+[2024-06-09T10:36:56.876+0000] {logging_mixin.py:188} WARNING -   File "/usr/local/lib/python3.12/selectors.py", line 269, in close
+[2024-06-09T10:36:56.877+0000] {logging_mixin.py:188} WARNING -     self._fd_to_key.clear()
+[2024-06-09T10:36:56.879+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 457, in _exit_gracefully
+[2024-06-09T10:36:56.880+0000] {logging_mixin.py:188} WARNING -     sys.exit(os.EX_OK)
+[2024-06-09T10:36:56.881+0000] {logging_mixin.py:188} WARNING - SystemExit: 0
+[2024-06-09T10:36:57.324+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.309+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:example_bash_decorator
+[2024-06-09T10:36:57.353+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.352+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:example_bash_decorator
+[2024-06-09T10:36:57.368+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.367+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:example_bash_decorator
+[2024-06-09T10:36:57.371+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.370+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-06-09T10:36:57.415+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.414+0000] {dag.py:3118} INFO - Creating ORM DAG for example_bash_decorator
+[2024-06-09T10:36:57.417+0000] {logging_mixin.py:188} INFO - [2024-06-09T10:36:57.416+0000] {dag.py:3954} INFO - Setting next_dagrun for example_bash_decorator to None, run_after=None
+[2024-06-09T10:36:57.475+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_decorator.py took 10.552 seconds

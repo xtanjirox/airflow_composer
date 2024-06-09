@@ -1,0 +1,1 @@
+[2024-06-04T15:43:22.367+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: metrics_calculators.start_pipeline manual__2024-06-04T15:43:17.576346+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
